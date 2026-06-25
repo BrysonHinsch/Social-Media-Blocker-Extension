@@ -1,0 +1,67 @@
+{
+  "manifest_version": 3,
+  "name": "SocialBlock",
+  "version": "1.0",
+
+  "description": "Blocks social media sites such as tiktok and instagram after a set time limit is reached",
+
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "socialblock@mozilla.org",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.facebook.com/*",
+        "*://facebook.com/*",
+
+        "*://*.instagram.com/*",
+        "*://instagram.com/*",
+
+        "*://*.tiktok.com/*",
+        "*://tiktok.com/*",
+
+        "*://*.twitter.com/*",
+        "*://twitter.com/*",
+        "*://*.x.com/*",
+        "*://x.com/*",
+
+        "*://*.reddit.com/*",
+        "*://reddit.com/*",
+
+        "*://*.youtube.com/*",
+        "*://youtube.com/*",
+        "*://youtu.be/*",
+
+        "*://*.snapchat.com/*",
+        "*://snapchat.com/*",
+
+        "*://*.tumblr.com/*",
+        "*://tumblr.com/*",
+
+        "*://*.twitch.tv/*",
+        "*://twitch.tv/*"
+        ],
+      "js": ["content_scripts/socialblock.js"]
+    }
+  ],
+
+  "action": {
+    "default_icon": "icons/paw.png",
+    "default_title": "SocialBlock",
+    "default_popup": "popup/popup.html"
+  },
+
+  "permissions": [
+    "storage"
+]
+}
