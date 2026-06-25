@@ -42,10 +42,35 @@ async function check_over_limit() {
     let limit_used = await browser.storage.local.get("limit_used");
 
     if (limit_used.limit_used >= limit.limit) {
-        delete_body();
+        append_popup_window();
     }
+}
+
+// Yuck I wish I could use react or smth else this is hideous
+function append_popup_window() {
+    const popup = document.createElement("div");
+    popup.id = "limit-popup";
+
+    const content = document.createElement("div");
+    content.id = "popup-content"
+
+    const text = document.createElement("p");
+    text.textContent = "You've reached your daily limit";
+    content.appendChild(text);
+
+    const button_1 = document.createElement("button");
+    button_1.textContent = "5 more minutes";
+    content.appendChild(button_1);
+
+    const button_2 = document.createElement("button");
+    button_2.textContent = "Ignore for the session";
+    content.appendChild(button_2);
+
+    popup.appendChild(content);
+
+    document.body.prepend(popup);
 }
 
 initialize_storage();
 setInterval(update_limit_used, 60000);
-setInterval(check_over_limit, 60000);
+setInterval(check_over_limit, 1000);
