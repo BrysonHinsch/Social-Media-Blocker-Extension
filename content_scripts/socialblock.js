@@ -1,9 +1,6 @@
 
 let last_time_checked = Date.now();
-
-function delete_body() {
-    document.body.remove();
-}
+let ignore = false;
 
 function update_limit_used() {
     const current_time = Date.now();
@@ -41,9 +38,21 @@ async function check_over_limit() {
     let limit = await browser.storage.local.get("limit");
     let limit_used = await browser.storage.local.get("limit_used");
 
+    if (ignore === true) return;
+    
     if (limit_used.limit_used >= limit.limit) {
         append_popup_window();
     }
+}
+
+function continue_button_handler() {
+    
+}
+
+function ignore_button_handler() {
+    ignore = true;
+    const element = document.getElementById("limit-popup");
+    element.remove();
 }
 
 // Yuck I wish I could use react or smth else this is hideous
@@ -63,7 +72,8 @@ function append_popup_window() {
     content.appendChild(button_1);
 
     const button_2 = document.createElement("button");
-    button_2.textContent = "Ignore for the session";
+    button_2.textContent = "Ignore for this tab";
+    button_2.addEventListener("click", ignore_button_handler);
     content.appendChild(button_2);
 
     popup.appendChild(content);
