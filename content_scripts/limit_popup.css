@@ -1,5 +1,7 @@
 #limit-popup {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+
     position: fixed;
     top: 0;
     left: 0;
@@ -13,11 +15,10 @@
 }
 
 #popup-content {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 20px;
+    all: initial;
 
-    background-color: #BBB;
-    border-radius: 10px;
+    background-color: #6C6276;
+    border-radius: 5px;
     padding: 20px;
 
     display: flex;
@@ -27,5 +28,24 @@
 }
 
 #popup-content p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    color: #FFFFFF;
+
     margin-bottom: 20px;
+}
+
+#popup-content button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 6px 10px;
+    cursor: pointer;
+
+    background-color: #EEEEEE;
+    color: #000000;
+    text-align: center;
+
+    margin-bottom: 10px;;
 }

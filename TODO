@@ -12,18 +12,6 @@ I dont want it writing to disk this often.
 it would also be nice if I could find a way for it not to double count time with multiple tabs open
 basically just fix the control flow
 
-use await
-or even just bundle the browser.storage.local.get or set into their own functions
-it takes up so many extra lines and looks ugly and confusing just fix it
-
-make the +5 minutes button work
-this is kinda bundled in with writing to disk less
-redirecting in the same tab doesnt reset anything so thats fine
-
-handling crashes isnt that important
-if it goes a couple minutes over thats whatever
-Id rather keep it as lightweight as possible anyways
-
 fix the popup
 currently I add and delete the entire dom node every time I want to make it appear/disappear
 thats very bad for obvious reasons lmao

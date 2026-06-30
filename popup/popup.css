@@ -1,0 +1,51 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #6C6276;
+    margin: 0;
+}
+
+#title-bar {
+    color: #FFFFFF;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#popup-content {
+    background-color: #EEEEEE;
+    padding: 12px;
+}
+
+#flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+#limit-container {
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+#button-container {
+
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-right: 10px;
+}
+
+button {
+    font-weight: bolder;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+#popup-content input,
+#popup-content button#set-limit {
+    margin-top: 10px;
+}
