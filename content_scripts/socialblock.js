@@ -111,5 +111,5 @@ function append_popup_window() {
 }
 
 initialize_storage();
-setInterval(update_limit_used, 5000);
-setInterval(check_over_limit, 1000);
+setInterval(update_limit_used, 30000);
+setInterval(check_over_limit, 60000);
